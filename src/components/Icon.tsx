@@ -10,7 +10,14 @@ const CustomIconn = createIconSetFromIcoMoon(
     'icomoon.ttf'
 )
 
-const Icon = () => {
+interface Props {
+    name: string
+    size: number
+    color: string
+}
+
+const Icon = (props: Props) => {
+    const { name, size, color } = props
     const [fontsLoaded] = useFonts({
         IcoMoon: fontData,
     })
@@ -18,7 +25,7 @@ const Icon = () => {
         return null
     }
     return (
-        <CustomIconn name="plus" size={40} color={'red'}/>
+        <CustomIconn name={name} size={size} color={color}/>
     )
 }
 
